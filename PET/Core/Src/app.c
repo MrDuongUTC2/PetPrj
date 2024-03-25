@@ -37,11 +37,11 @@ void MainTask()
 
 void jumpToApp(const uint32_t address)
 {
-	const JumpStruct* vector_p = (JumpStruct*)address;
+    uint32_t stack_addr = *((uint32_t *)address);
+    void (*func_p)(void) = *((void (**)(void))(address + sizeof(uint32_t)));
 
-	/* let's do The Jump! */
     /* Jump, used asm to avoid stack optimization */
-    asm("msr msp, %0; bx %1;" : : "r"(vector_p->stack_addr), "r"(vector_p->func_p));
+    asm("msr msp, %0; bx %1;" : : "r"(stack_addr), "r"(func_p));
 }
 
 void Deinit()
