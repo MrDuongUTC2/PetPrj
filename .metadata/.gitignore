@@ -1,52 +1,10 @@
-# Prerequisites
-*.d
+# ignore all . files and . folders
+.*
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+# Dont ignore .gitignore (this file)
+# This is just for verbosity, you can leave it out if
+# .gitignore is already tracked or if you use -f to
+# force-add it if you just created it
+!/.gitignore
 
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+.**/
